@@ -5,7 +5,7 @@
 //
 //
 
-string cvs_version = "$Id: jsredirect.pike,v 1.2 1998-01-12 14:43:46 hww3 Exp $";
+string cvs_version = "$Id: jsredirect.pike,v 1.3 1998-08-18 18:48:38 hww3 Exp $";
 
 #include <module.h>
 #include <process.h>
@@ -52,7 +52,8 @@ mixed container_jsredirect(string tag_name, mapping arguments,
 			string contents, object id,
 			mapping defines)
 {
-
+if(arguments->preparse)
+contents = parse_rxml(contents, id);
 contents = parse_html(contents,([]),([ "option":container_option ]), id );
    i++;
 string retval="";
