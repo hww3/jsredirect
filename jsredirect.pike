@@ -5,6 +5,8 @@
 //
 //
 
+string cvs_version = "$Id: jsredirect.pike,v 1.2 1998-01-12 14:43:46 hww3 Exp $";
+
 #include <module.h>
 #include <process.h>
 inherit "module";
